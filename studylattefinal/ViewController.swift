@@ -19,11 +19,15 @@ func applicationDidBecomeActive(application: UIApplication) {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         let loginButton = LoginButton(readPermissions: [ .publicProfile ])
         loginButton.center = view.center
         
         view.addSubview(loginButton)
+        
+        self.imageView.image = UIImage.init(named: "StudyWithSucculents")
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
