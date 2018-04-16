@@ -56,7 +56,7 @@
         <!--Item 2-->
         <scene sceneID="2tI-LM-Rz5">
             <objects>
-                <viewController id="E62-9N-Ebo" sceneMemberID="viewController">
+                <viewController id="E62-9N-Ebo" customClass="FavoritesViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WaM-Hx-TW1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--Item 1-->
         <scene sceneID="QKJ-jh-Fzf">
             <objects>
-                <viewController id="4CB-AY-9HR" sceneMemberID="viewController">
+                <viewController id="4CB-AY-9HR" customClass="NearbyShopsViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHo-Kt-ENY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
