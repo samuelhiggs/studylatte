@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660C4E65208446850088AD6E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C4E64208446850088AD6E /* SettingsViewController.swift */; };
 		66FF91C82084409B0015ADC3 /* Matchmaker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66FF91C72084409B0015ADC3 /* Matchmaker.ttf */; };
 		70E2EA180A3D576201B24848 /* Pods_studylattefinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */; };
 		710FA7A9207DAB950034D59F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FA7A8207DAB950034D59F /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_studylattefinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		660C4E64208446850088AD6E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		66FF91C72084409B0015ADC3 /* Matchmaker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Matchmaker.ttf; sourceTree = "<group>"; };
 		710FA7A5207DAB940034D59F /* studylattefinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studylattefinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710FA7A8207DAB950034D59F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				710FA7AF207DAB950034D59F /* Assets.xcassets */,
 				710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */,
 				710FA7B4207DAB950034D59F /* Info.plist */,
+				660C4E64208446850088AD6E /* SettingsViewController.swift */,
 			);
 			path = studylattefinal;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				710FA7AB207DAB950034D59F /* ViewController.swift in Sources */,
 				710FA7A9207DAB950034D59F /* AppDelegate.swift in Sources */,
+				660C4E65208446850088AD6E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
