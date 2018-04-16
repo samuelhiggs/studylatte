@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66FF91C82084409B0015ADC3 /* Matchmaker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66FF91C72084409B0015ADC3 /* Matchmaker.ttf */; };
 		70E2EA180A3D576201B24848 /* Pods_studylattefinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */; };
 		710FA7A9207DAB950034D59F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FA7A8207DAB950034D59F /* AppDelegate.swift */; };
 		710FA7AB207DAB950034D59F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FA7AA207DAB950034D59F /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_studylattefinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66FF91C72084409B0015ADC3 /* Matchmaker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Matchmaker.ttf; sourceTree = "<group>"; };
 		710FA7A5207DAB940034D59F /* studylattefinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studylattefinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710FA7A8207DAB950034D59F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		710FA7AA207DAB950034D59F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,9 +50,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		66FF91C62084407B0015ADC3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				66FF91C72084409B0015ADC3 /* Matchmaker.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		710FA79C207DAB940034D59F = {
 			isa = PBXGroup;
 			children = (
+				66FF91C62084407B0015ADC3 /* Fonts */,
 				710FA7A7207DAB940034D59F /* studylattefinal */,
 				710FA7A6207DAB940034D59F /* Products */,
 				EE821F8419BD318B7B173FB3 /* Pods */,
@@ -152,6 +163,7 @@
 				710FA7B3207DAB950034D59F /* LaunchScreen.storyboard in Resources */,
 				710FA7B0207DAB950034D59F /* Assets.xcassets in Resources */,
 				710FA7AE207DAB950034D59F /* Main.storyboard in Resources */,
+				66FF91C82084409B0015ADC3 /* Matchmaker.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
