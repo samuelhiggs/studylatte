@@ -9,6 +9,8 @@
 import UIKit
 import FacebookLogin
 import FacebookCore
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 func applicationDidBecomeActive(application: UIApplication) {
     // Call the 'activate' method to log an app event for use
@@ -17,26 +19,48 @@ func applicationDidBecomeActive(application: UIApplication) {
     // ...
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginButtonDelegate {
+    
+    var fbLoginSuccess = false
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        switch result {
+        case .failed(_):
+            print("facebook login failed")
+            break
+        case .cancelled:
+            print("login cancelled")
+            break
+        case .success(_, _, _):
+            fbLoginSuccess = true
+            break
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        print("You Logged Out.")
+    }
     
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
-        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-        loginButton.center = view.center
-        
-        view.addSubview(loginButton)
-        
         self.imageView.image = UIImage.init(named: "StudyWithSucculents")
+        let theLoginButton = LoginButton(readPermissions: [ .publicProfile ])
+        theLoginButton.delegate = self
+        theLoginButton.center = view.center
+        view.addSubview(theLoginButton)
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (fbLoginSuccess==true) {
+            performSegue(withIdentifier: "segue1", sender: self)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

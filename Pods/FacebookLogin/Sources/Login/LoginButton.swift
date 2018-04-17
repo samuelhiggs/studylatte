@@ -82,8 +82,11 @@ public class LoginButton: UIView {
     self.sdkLoginButton = sdkLoginButton
     delegateBridge = LoginButtonDelegateBridge()
 
-    let frame = frame ?? CGRect(origin: .zero, size: sdkLoginButton.bounds.size)
+    /* change the button size */
+    let sizebtn = CGSize(width: 250, height: 50)
+    let frame = frame ?? CGRect(origin: .zero, size: sizebtn)
     super.init(frame: frame)
+
 
     delegateBridge.setupAsDelegateFor(sdkLoginButton, loginButton: self)
     addSubview(sdkLoginButton)

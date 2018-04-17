@@ -47,6 +47,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="xqw-As-AHV" id="bOp-FQ-HWz"/>
+                        <segue destination="cO5-CG-RlQ" kind="show" identifier="segue1" id="xU6-aS-GsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
