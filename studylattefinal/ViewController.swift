@@ -46,7 +46,8 @@ class ViewController: UIViewController, LoginButtonDelegate {
         self.imageView.image = UIImage.init(named: "StudyWithSucculents")
         let theLoginButton = LoginButton(readPermissions: [ .publicProfile ])
         theLoginButton.delegate = self
-        theLoginButton.center = view.center
+        theLoginButton.frame.origin.y = 375
+        theLoginButton.frame.origin.x = 65
         view.addSubview(theLoginButton)
         
         super.viewDidLoad()

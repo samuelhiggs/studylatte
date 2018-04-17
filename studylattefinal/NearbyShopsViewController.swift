@@ -12,7 +12,6 @@ class NearbyShopsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Coffee Shops Near Me"
 
         // Do any additional setup after loading the view.
     }

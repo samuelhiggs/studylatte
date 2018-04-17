@@ -54,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="55.322338830584712"/>
         </scene>
-        <!--Item 2-->
+        <!--Favorites-->
         <scene sceneID="2tI-LM-Rz5">
             <objects>
                 <viewController id="E62-9N-Ebo" customClass="FavoritesViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,13 +64,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="waw-Dg-ojA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="CE6-XO-Ey7"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="CE6-XO-Ey7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czf-cY-mmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1718" y="445"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="H8Z-bW-J13">
             <objects>
                 <viewController id="ocK-Lu-9lB" customClass="SettingsViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,13 +80,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pCU-s1-Y7y"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lM3-ax-Sfy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="lM3-ax-Sfy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGw-GQ-Ngf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2689" y="54"/>
         </scene>
-        <!--Item 1-->
+        <!--Coffee Shops Near Me-->
         <scene sceneID="QKJ-jh-Fzf">
             <objects>
                 <viewController id="4CB-AY-9HR" customClass="NearbyShopsViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ofd-aP-dOu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="ceL-L4-IrT"/>
+                    <tabBarItem key="tabBarItem" title="Coffee Shops Near Me" id="ceL-L4-IrT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Snc-14-5lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
