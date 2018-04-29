@@ -19,6 +19,8 @@
 	</array>
 	<key>FacebookAppID</key>
 	<string>2203698609657346</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location when using the app</string>
 	<key>FacebookDisplayName</key>
 	<string>studylatte</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -62,6 +64,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need your location always and when using the app</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location always</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
