@@ -41,11 +41,11 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        if let mapView = self.mapView {
-            let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, self.distanceSpan, self.distanceSpan)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
-            mapView.showsUserLocation = true
         }
     }
 
@@ -53,9 +53,9 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         self.currentOption = self.MapSegControl.selectedSegmentIndex
         switch MapSegControl.selectedSegmentIndex {
         case 0:
-            tableView.isHidden = true
-        case 1:
             tableView.isHidden = false
+        case 1:
+            tableView.isHidden = true
         default:
             break;
         }
