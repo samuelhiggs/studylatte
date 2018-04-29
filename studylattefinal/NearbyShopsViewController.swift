@@ -9,7 +9,13 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
 class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
+    
+    var selectedPin:MKPlacemark? = nil
     
     @IBOutlet weak var MapSegControl: UISegmentedControl!
 
@@ -37,6 +43,8 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
+        self.displayNearbyShops()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -47,6 +55,28 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    func displayNearbyShops() {
+        //Create object representing a search query for coffee shops
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = "Coffee Shop"
+        request.region = mapView.region
+        
+        //Search for the created query
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard let response = response else {
+                print("There was an error searching for: \(request.naturalLanguageQuery) error: \(error)")
+                return
+            }
+            
+            for item in response.mapItems {
+                self.dropPinZoomIn(placemark: item.placemark)
+            }
+        }
+        
+        
     }
 
     @IBAction func mapSegControlAction(_ sender: UISegmentedControl) {
@@ -77,4 +107,25 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
 
+}
+
+//For dropping a pin on each search result
+extension NearbyShopsViewController: HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark){
+        // cache the pin
+        selectedPin = placemark
+        // clear existing pins
+        //mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.name
+        if let city = placemark.locality,
+            let state = placemark.administrativeArea {
+            annotation.subtitle = "(city) (state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
 }
