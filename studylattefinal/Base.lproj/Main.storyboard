@@ -61,12 +61,38 @@
                     <view key="view" contentMode="scaleToFill" id="WaM-Hx-TW1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MjR-NB-TZE">
+                                <rect key="frame" x="0.0" y="38" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="E62-9N-Ebo" id="nuu-8c-DQj"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MjR-NB-TZE" firstAttribute="top" secondItem="waw-Dg-ojA" secondAttribute="top" constant="18" id="Ckd-bU-jG7"/>
+                            <constraint firstItem="MjR-NB-TZE" firstAttribute="leading" secondItem="waw-Dg-ojA" secondAttribute="leading" id="oKH-xY-vYF"/>
+                            <constraint firstItem="MjR-NB-TZE" firstAttribute="trailing" secondItem="waw-Dg-ojA" secondAttribute="trailing" id="xC4-MH-nIA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="waw-Dg-ojA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" id="CE6-XO-Ey7"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="9xk-Zy-deF" id="ho4-pB-b6G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czf-cY-mmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="9xk-Zy-deF">
+                    <connections>
+                        <outlet property="delegate" destination="E62-9N-Ebo" id="7gf-AV-25R"/>
+                        <outlet property="searchBar" destination="MjR-NB-TZE" id="6Lk-qG-bsA"/>
+                        <outlet property="searchContentsController" destination="E62-9N-Ebo" id="DmH-6t-hwl"/>
+                        <outlet property="searchResultsDataSource" destination="E62-9N-Ebo" id="GEK-aE-5im"/>
+                        <outlet property="searchResultsDelegate" destination="E62-9N-Ebo" id="ZoL-p2-aad"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1718" y="445"/>
         </scene>
@@ -93,14 +119,91 @@
                     <view key="view" contentMode="scaleToFill" id="JHo-Kt-ENY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-SI-ecf">
+                                <rect key="frame" x="134" y="20" width="107" height="29"/>
+                                <segments>
+                                    <segment title="Shops"/>
+                                    <segment title="Map"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapSegControlAction:" destination="4CB-AY-9HR" eventType="valueChanged" id="Qiy-9K-fQI"/>
+                                </connections>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="KT6-qo-3Qn">
+                                <rect key="frame" x="0.0" y="55" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4CB-AY-9HR" id="FA8-zD-eIE"/>
+                                </connections>
+                            </searchBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-60-89A">
+                                <rect key="frame" x="0.0" y="111" width="375" height="507"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Por-yj-nuI">
+                                <rect key="frame" x="0.0" y="111" width="375" height="507"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DiF-yn-LSc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="507"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="DiF-yn-LSc" firstAttribute="leading" secondItem="Por-yj-nuI" secondAttribute="leading" id="6wA-KZ-FKn"/>
+                                    <constraint firstAttribute="bottom" secondItem="DiF-yn-LSc" secondAttribute="bottom" id="8ow-Pa-o9b"/>
+                                    <constraint firstAttribute="trailing" secondItem="DiF-yn-LSc" secondAttribute="trailing" id="PPv-8v-hiK"/>
+                                    <constraint firstItem="DiF-yn-LSc" firstAttribute="top" secondItem="Por-yj-nuI" secondAttribute="top" id="e9p-6x-jw3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pYi-SI-ecf" firstAttribute="top" secondItem="Ofd-aP-dOu" secondAttribute="top" id="27Z-aA-59N"/>
+                            <constraint firstItem="F8f-60-89A" firstAttribute="bottom" secondItem="Ofd-aP-dOu" secondAttribute="bottom" id="7Gh-eQ-xg1"/>
+                            <constraint firstItem="Por-yj-nuI" firstAttribute="bottom" secondItem="Ofd-aP-dOu" secondAttribute="bottom" id="8qf-Gp-Mmw"/>
+                            <constraint firstItem="F8f-60-89A" firstAttribute="trailing" secondItem="Ofd-aP-dOu" secondAttribute="trailing" id="9fa-wM-JRp"/>
+                            <constraint firstItem="F8f-60-89A" firstAttribute="top" secondItem="KT6-qo-3Qn" secondAttribute="bottom" id="E9K-a7-fWO"/>
+                            <constraint firstItem="pYi-SI-ecf" firstAttribute="leading" secondItem="Ofd-aP-dOu" secondAttribute="leading" constant="134" id="MrK-V4-vlM"/>
+                            <constraint firstItem="Por-yj-nuI" firstAttribute="top" secondItem="KT6-qo-3Qn" secondAttribute="bottom" id="N00-TP-wZb"/>
+                            <constraint firstItem="KT6-qo-3Qn" firstAttribute="leading" secondItem="Ofd-aP-dOu" secondAttribute="leading" id="SgS-AX-rlI"/>
+                            <constraint firstItem="Ofd-aP-dOu" firstAttribute="trailing" secondItem="pYi-SI-ecf" secondAttribute="trailing" constant="134" id="bZv-eC-QWB"/>
+                            <constraint firstItem="Por-yj-nuI" firstAttribute="leading" secondItem="Ofd-aP-dOu" secondAttribute="leading" id="dLF-Oh-WpL"/>
+                            <constraint firstItem="Por-yj-nuI" firstAttribute="trailing" secondItem="Ofd-aP-dOu" secondAttribute="trailing" id="eff-Ec-Lyu"/>
+                            <constraint firstItem="KT6-qo-3Qn" firstAttribute="top" secondItem="pYi-SI-ecf" secondAttribute="bottom" constant="7" id="ihb-dt-ZAm"/>
+                            <constraint firstItem="KT6-qo-3Qn" firstAttribute="trailing" secondItem="Ofd-aP-dOu" secondAttribute="trailing" id="jci-bs-bgk"/>
+                            <constraint firstItem="F8f-60-89A" firstAttribute="leading" secondItem="Ofd-aP-dOu" secondAttribute="leading" id="vmp-5r-agF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ofd-aP-dOu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Coffee Shops Near Me" id="ceL-L4-IrT"/>
+                    <connections>
+                        <outlet property="MapSegControl" destination="pYi-SI-ecf" id="Fcq-CB-9hM"/>
+                        <outlet property="mapView" destination="F8f-60-89A" id="20s-wS-qgv"/>
+                        <outlet property="searchDisplayController" destination="vo3-ev-pWG" id="WxZ-Mo-hxb"/>
+                        <outlet property="tableView" destination="Por-yj-nuI" id="NlM-Gg-Fjs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Snc-14-5lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="D3N-Do-Iq9">
+                    <connections>
+                        <outlet property="delegate" destination="4CB-AY-9HR" id="BsX-q3-2aT"/>
+                        <outlet property="searchBar" destination="KT6-qo-3Qn" id="dot-Z7-Ztg"/>
+                        <outlet property="searchContentsController" destination="4CB-AY-9HR" id="C70-aC-U65"/>
+                        <outlet property="searchResultsDataSource" destination="4CB-AY-9HR" id="VkU-TK-DHc"/>
+                        <outlet property="searchResultsDelegate" destination="4CB-AY-9HR" id="bzd-AP-oMw"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="vo3-ev-pWG">
+                    <connections>
+                        <outlet property="delegate" destination="4CB-AY-9HR" id="aMY-7e-whO"/>
+                        <outlet property="searchContentsController" destination="4CB-AY-9HR" id="g23-Lb-9Ng"/>
+                        <outlet property="searchResultsDataSource" destination="4CB-AY-9HR" id="y5F-AO-EaI"/>
+                        <outlet property="searchResultsDelegate" destination="4CB-AY-9HR" id="xOH-Ai-1Zk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1718" y="-341"/>
+            <point key="canvasLocation" x="1717.5999999999999" y="-341.37931034482762"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y6a-9r-1TD">
