@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
@@ -50,6 +51,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.first {
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
@@ -61,7 +63,11 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         //Create object representing a search query for coffee shops
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "Coffee Shop"
-        request.region = mapView.region
+        
+        //Set search area around current location
+        let currentLocation = self.locationManager?.location?.coordinate
+        let searchArea = MKCoordinateRegion(center: currentLocation!, span: MKCoordinateSpanMake(0.05, 0.05))
+        request.region = searchArea
         
         //Search for the created query
         let search = MKLocalSearch(request: request)
@@ -71,6 +77,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
                 return
             }
             
+            //Drop a pin on each result
             for item in response.mapItems {
                 self.dropPinZoomIn(placemark: item.placemark)
             }
@@ -124,8 +131,13 @@ extension NearbyShopsViewController: HandleMapSearch {
             annotation.subtitle = "(city) (state)"
         }
         mapView.addAnnotation(annotation)
+        
+        //Centers the map view around the dropped pin
+        /*
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        */
+    
     }
 }
