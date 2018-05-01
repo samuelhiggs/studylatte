@@ -53,7 +53,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let span = MKCoordinateSpanMake(0.02, 0.02)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
         }
@@ -62,7 +62,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     func displayNearbyShops() {
         //Create object representing a search query for coffee shops
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = "Coffee Shop"
+        request.naturalLanguageQuery = "Coffee"
         
         //Set search area around current location
         let currentLocation = self.locationManager?.location?.coordinate
@@ -128,7 +128,7 @@ extension NearbyShopsViewController: HandleMapSearch {
         annotation.title = placemark.name
         if let city = placemark.locality,
             let state = placemark.administrativeArea {
-            annotation.subtitle = "(city) (state)"
+            annotation.subtitle = "\(city), \(state)"
         }
         mapView.addAnnotation(annotation)
         

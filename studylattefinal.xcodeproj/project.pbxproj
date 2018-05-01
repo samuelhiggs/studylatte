@@ -18,6 +18,8 @@
 		710FA7AE207DAB950034D59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA7AC207DAB950034D59F /* Main.storyboard */; };
 		710FA7B0207DAB950034D59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710FA7AF207DAB950034D59F /* Assets.xcassets */; };
 		710FA7B3207DAB950034D59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */; };
+		71560C902097F81B003641EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71560C8F2097F81B003641EB /* Settings.bundle */; };
+		71560C922097F88A003641EB /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71560C912097F88A003641EB /* SettingsBundleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		710FA7AF207DAB950034D59F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		710FA7B2207DAB950034D59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		710FA7B4207DAB950034D59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71560C8F2097F81B003641EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		71560C912097F88A003641EB /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		A792CDB257364D46471FE26B /* Pods-studylattefinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-studylattefinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-studylattefinal/Pods-studylattefinal.release.xcconfig"; sourceTree = "<group>"; };
 		E8A83DAD0B37499A71B5AF3A /* Pods-studylattefinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-studylattefinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-studylattefinal/Pods-studylattefinal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +108,10 @@
 				710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */,
 				710FA7B4207DAB950034D59F /* Info.plist */,
 				660C4E64208446850088AD6E /* SettingsViewController.swift */,
+				71560C8F2097F81B003641EB /* Settings.bundle */,
 				660C4E66208447BD0088AD6E /* NearbyShopsViewController.swift */,
 				660C4E68208447E70088AD6E /* FavoritesViewController.swift */,
+				71560C912097F88A003641EB /* SettingsBundleHelper.swift */,
 			);
 			path = studylattefinal;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				710FA7B0207DAB950034D59F /* Assets.xcassets in Resources */,
 				710FA7AE207DAB950034D59F /* Main.storyboard in Resources */,
 				66FF91C82084409B0015ADC3 /* Matchmaker.ttf in Resources */,
+				71560C902097F81B003641EB /* Settings.bundle in Resources */,
 				66BAF9D02086ABCA004A150A /* iconbeast lite 200 - png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +257,7 @@
 				710FA7A9207DAB950034D59F /* AppDelegate.swift in Sources */,
 				660C4E65208446850088AD6E /* SettingsViewController.swift in Sources */,
 				660C4E69208447E70088AD6E /* FavoritesViewController.swift in Sources */,
+				71560C922097F88A003641EB /* SettingsBundleHelper.swift in Sources */,
 				660C4E67208447BD0088AD6E /* NearbyShopsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
