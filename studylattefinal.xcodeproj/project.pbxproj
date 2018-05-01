@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		660C4E67208447BD0088AD6E /* NearbyShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C4E66208447BD0088AD6E /* NearbyShopsViewController.swift */; };
 		660C4E69208447E70088AD6E /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660C4E68208447E70088AD6E /* FavoritesViewController.swift */; };
+		66ACD1B9209817560095EFD2 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACD1B8209817560095EFD2 /* LocationSearchTable.swift */; };
+		66ACD1BB209922CF0095EFD2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACD1BA209922CF0095EFD2 /* SettingsViewController.swift */; };
 		66BAF9D02086ABCA004A150A /* iconbeast lite 200 - png in Resources */ = {isa = PBXBuildFile; fileRef = 66BAF9CF2086ABCA004A150A /* iconbeast lite 200 - png */; };
 		66FF91C82084409B0015ADC3 /* Matchmaker.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66FF91C72084409B0015ADC3 /* Matchmaker.ttf */; };
 		70E2EA180A3D576201B24848 /* Pods_studylattefinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */; };
@@ -25,6 +27,8 @@
 		1559D47120C975AFA2116865 /* Pods_studylattefinal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_studylattefinal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		660C4E66208447BD0088AD6E /* NearbyShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyShopsViewController.swift; sourceTree = "<group>"; };
 		660C4E68208447E70088AD6E /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		66ACD1B8209817560095EFD2 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		66ACD1BA209922CF0095EFD2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		66BAF9CF2086ABCA004A150A /* iconbeast lite 200 - png */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "iconbeast lite 200 - png"; sourceTree = "<group>"; };
 		66FF91C72084409B0015ADC3 /* Matchmaker.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Matchmaker.ttf; sourceTree = "<group>"; };
 		710FA7A5207DAB940034D59F /* studylattefinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = studylattefinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,7 @@
 				710FA7A8207DAB950034D59F /* AppDelegate.swift */,
 				710FA7AA207DAB950034D59F /* ViewController.swift */,
 				710FA7AC207DAB950034D59F /* Main.storyboard */,
+				66ACD1B8209817560095EFD2 /* LocationSearchTable.swift */,
 				710FA7AF207DAB950034D59F /* Assets.xcassets */,
 				710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */,
 				710FA7B4207DAB950034D59F /* Info.plist */,
@@ -109,6 +114,7 @@
 				660C4E66208447BD0088AD6E /* NearbyShopsViewController.swift */,
 				660C4E68208447E70088AD6E /* FavoritesViewController.swift */,
 				71560C912097F88A003641EB /* SettingsBundleHelper.swift */,
+				66ACD1BA209922CF0095EFD2 /* SettingsViewController.swift */,
 			);
 			path = studylattefinal;
 			sourceTree = "<group>";
@@ -252,7 +258,9 @@
 			files = (
 				710FA7AB207DAB950034D59F /* ViewController.swift in Sources */,
 				710FA7A9207DAB950034D59F /* AppDelegate.swift in Sources */,
+				66ACD1BB209922CF0095EFD2 /* SettingsViewController.swift in Sources */,
 				660C4E69208447E70088AD6E /* FavoritesViewController.swift in Sources */,
+				66ACD1B9209817560095EFD2 /* LocationSearchTable.swift in Sources */,
 				71560C922097F88A003641EB /* SettingsBundleHelper.swift in Sources */,
 				660C4E67208447BD0088AD6E /* NearbyShopsViewController.swift in Sources */,
 			);

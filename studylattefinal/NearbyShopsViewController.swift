@@ -24,6 +24,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UIView!
     @IBOutlet weak var mapView: MKMapView!
+    var resultSearchController:UISearchController? = nil
     var currentOption = 0
     
     var locationManager: CLLocationManager?
@@ -46,6 +47,22 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         
         self.displayNearbyShops()
         
+
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let currentLocation = self.locationManager?.location?.coordinate
+        let region = MKCoordinateRegion(center: currentLocation!, span: span)
+        mapView.setRegion(region, animated: true)
+        locationSearchTable.mapView = mapView
 
         // Do any additional setup after loading the view.
     }
