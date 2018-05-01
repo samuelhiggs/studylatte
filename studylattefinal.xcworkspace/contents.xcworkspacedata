@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SettingsViewController.swift">
+      location = "group:/Users/Shayan/Documents/Mobile Development/StudyLatte/studylatte/studylattefinal/SettingsViewController.swift">
    </FileRef>
    <FileRef
       location = "group:studylattefinal.xcodeproj">
