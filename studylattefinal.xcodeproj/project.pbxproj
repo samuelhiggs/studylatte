@@ -19,7 +19,7 @@
 		710FA7B3207DAB950034D59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */; };
 		71560C902097F81B003641EB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71560C8F2097F81B003641EB /* Settings.bundle */; };
 		71560C922097F88A003641EB /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71560C912097F88A003641EB /* SettingsBundleHelper.swift */; };
-		E4ACDF862098172C0091D0DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACDF852098172C0091D0DC /* SettingsViewController.swift */; };
+		E4ACDF88209817950091D0DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACDF87209817950091D0DC /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		71560C8F2097F81B003641EB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		71560C912097F88A003641EB /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
 		A792CDB257364D46471FE26B /* Pods-studylattefinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-studylattefinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-studylattefinal/Pods-studylattefinal.release.xcconfig"; sourceTree = "<group>"; };
-		E4ACDF852098172C0091D0DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "/Users/Shayan/Documents/Mobile Development/StudyLatte/studylatte/studylattefinal/SettingsViewController.swift"; sourceTree = "<absolute>"; };
+		E4ACDF87209817950091D0DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E8A83DAD0B37499A71B5AF3A /* Pods-studylattefinal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-studylattefinal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-studylattefinal/Pods-studylattefinal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +101,9 @@
 		710FA7A7207DAB940034D59F /* studylattefinal */ = {
 			isa = PBXGroup;
 			children = (
-				E4ACDF852098172C0091D0DC /* SettingsViewController.swift */,
 				710FA7A8207DAB950034D59F /* AppDelegate.swift */,
 				710FA7AA207DAB950034D59F /* ViewController.swift */,
+				E4ACDF87209817950091D0DC /* SettingsViewController.swift */,
 				710FA7AC207DAB950034D59F /* Main.storyboard */,
 				710FA7AF207DAB950034D59F /* Assets.xcassets */,
 				710FA7B1207DAB950034D59F /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 				660C4E69208447E70088AD6E /* FavoritesViewController.swift in Sources */,
 				71560C922097F88A003641EB /* SettingsBundleHelper.swift in Sources */,
 				660C4E67208447BD0088AD6E /* NearbyShopsViewController.swift in Sources */,
-				E4ACDF862098172C0091D0DC /* SettingsViewController.swift in Sources */,
+				E4ACDF88209817950091D0DC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

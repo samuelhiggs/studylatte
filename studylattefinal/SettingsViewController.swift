@@ -1,8 +1,9 @@
 //
 //  SettingsViewController.swift
-//  
+//  studylattefinal
 //
 //  Created by Shayan Khan on 4/30/18.
+//  Copyright © 2018 Samuel Higgs. All rights reserved.
 //
 
 import UIKit
