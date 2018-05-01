@@ -31,7 +31,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     let distanceSpan: Double = 500
     
     override func viewDidLoad() {
-        self.tableView.isHidden = true
+        self.tableView.isHidden = false
         super.viewDidLoad()
         
         
