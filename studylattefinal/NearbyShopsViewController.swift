@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 protocol HandleMapSearch {
-    func dropPinZoomIn(placemark:MKPlacemark)
+    func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool)
 }
 
 class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
@@ -45,8 +45,8 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        self.displayNearbyShops()
         
+        self.displayNearbyShops()
 
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
@@ -58,13 +58,15 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpanMake(0.03, 0.03)
         let currentLocation = self.locationManager?.location?.coordinate
         let region = MKCoordinateRegion(center: currentLocation!, span: span)
         mapView.setRegion(region, animated: true)
         locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
 
         // Do any additional setup after loading the view.
+
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -96,7 +98,8 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             
             //Drop a pin on each result
             for item in response.mapItems {
-                self.dropPinZoomIn(placemark: item.placemark)
+                let firstTime:Bool = true
+                self.dropPinZoomIn(placemark: item.placemark, firstTime: firstTime)
             }
         }
         
@@ -135,7 +138,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 
 //For dropping a pin on each search result
 extension NearbyShopsViewController: HandleMapSearch {
-    func dropPinZoomIn(placemark:MKPlacemark){
+    func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool){
         // cache the pin
         selectedPin = placemark
         // clear existing pins
@@ -150,11 +153,13 @@ extension NearbyShopsViewController: HandleMapSearch {
         mapView.addAnnotation(annotation)
         
         //Centers the map view around the dropped pin
-        /*
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegionMake(placemark.coordinate, span)
-        mapView.setRegion(region, animated: true)
-        */
+        if firstTime == false{
+            let span = MKCoordinateSpanMake(0.02, 0.02)
+            let region = MKCoordinateRegionMake(placemark.coordinate, span)
+            mapView.setRegion(region, animated: true)
+        }
+
+        
     
     }
 }
