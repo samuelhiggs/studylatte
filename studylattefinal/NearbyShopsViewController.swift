@@ -64,9 +64,25 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
+        
+        addMapTrackingButton()
 
         // Do any additional setup after loading the view.
 
+    }
+    
+    func addMapTrackingButton(){
+        let image = UIImage(named: "navicon") as UIImage?
+        let button   = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(origin: CGPoint(x:15, y: 15), size: CGSize(width: 35, height: 35))
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(NearbyShopsViewController.centerMapOnUserButtonClicked), for:.touchUpInside)
+        mapView.addSubview(button)
+    }
+    
+    @objc func centerMapOnUserButtonClicked() {
+        mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
