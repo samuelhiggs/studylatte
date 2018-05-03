@@ -59,10 +59,6 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
-        let span = MKCoordinateSpanMake(0.03, 0.03)
-        let currentLocation = self.locationManager?.location?.coordinate
-        let region = MKCoordinateRegion(center: currentLocation!, span: span)
-        mapView.setRegion(region, animated: true)
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
         
