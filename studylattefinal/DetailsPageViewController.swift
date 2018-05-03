@@ -14,9 +14,11 @@ import MapKit
 var favList:[MKMapItem] = []
 
 class DetailsPageViewController: UIViewController {
-    @IBOutlet weak var shopName: UILabel!
     
-    var shop:MKMapItem?
+    @IBOutlet weak var shopName: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var isOpenLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func appendToFavArray(_ sender: Any) {
         // append the current label and location to favorites list
@@ -27,7 +29,7 @@ class DetailsPageViewController: UIViewController {
         }
     }
     
-    
+        var shop:MKMapItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -45,8 +47,33 @@ class DetailsPageViewController: UIViewController {
     func populateUI() {
         if let shop = shop {
             shopName.text = shop.name
+            addressLabel.text = parseAddress(selectedItem: shop.placemark)
             self.title = shop.name
         }
+    }
+    
+    func parseAddress(selectedItem:MKPlacemark) -> String {
+        // put a space between "4" and "Melrose Place"
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
+        // put a comma between street and city/state
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        // put a space between "Washington" and "DC"
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
+        let addressLine = String(
+            format:"%@%@%@%@%@%@%@",
+            // street number
+            selectedItem.subThoroughfare ?? "",
+            firstSpace,
+            // street name
+            selectedItem.thoroughfare ?? "",
+            comma,
+            // city
+            selectedItem.locality ?? "",
+            secondSpace,
+            // state
+            selectedItem.administrativeArea ?? ""
+        )
+        return addressLine
     }
     
 

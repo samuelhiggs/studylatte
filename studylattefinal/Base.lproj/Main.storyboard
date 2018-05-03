@@ -199,26 +199,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx1-lW-6Ew">
-                                <rect key="frame" x="133" y="476" width="109" height="30"/>
+                                <rect key="frame" x="87" y="498" width="201" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add to favorites"/>
                                 <connections>
                                     <action selector="appendToFavArray:" destination="4wI-2e-tHp" eventType="touchUpInside" id="dqz-Jr-js1"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-DO-KKR">
-                                <rect key="frame" x="82" y="295" width="211" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyT-ov-0ek">
+                                <rect key="frame" x="114" y="247" width="146" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Seats Available"/>
-                                    <segment title="No Seats"/>
-                                </segments>
-                            </segmentedControl>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2n-7l-BsQ">
+                                <rect key="frame" x="114" y="218" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3q-yg-4it">
+                                <rect key="frame" x="18" y="157" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="isOpenLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2O-5M-Iiv">
+                                <rect key="frame" x="93" y="391" width="192" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nww-7j-tbj"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="q3q-yg-4it" id="f29-gg-aq5"/>
+                        <outlet property="imageView" destination="cyT-ov-0ek" id="bV2-U5-z6R"/>
+                        <outlet property="isOpenLabel" destination="c2O-5M-Iiv" id="FI4-aY-ZDa"/>
                         <outlet property="shopName" destination="Be0-og-Oix" id="J50-Lf-SS5"/>
                     </connections>
                 </viewController>
@@ -409,11 +429,11 @@
             </objects>
             <point key="canvasLocation" x="1617" y="54"/>
         </scene>
-        <!--Map View-->
+        <!--Map-->
         <scene sceneID="vr7-me-k60">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mz3-E4-zMK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map View" image="paper-plane" id="ceL-L4-IrT">
+                    <tabBarItem key="tabBarItem" title="Map" image="paper-plane" id="ceL-L4-IrT">
                         <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -449,11 +469,11 @@
             </objects>
             <point key="canvasLocation" x="833" y="874"/>
         </scene>
-        <!--List View-->
+        <!--Nearby Shops-->
         <scene sceneID="M2I-IE-wCZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jqL-kY-cAN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List View" id="XDE-bZ-chf"/>
+                    <tabBarItem key="tabBarItem" title="Nearby Shops" image="shop" id="XDE-bZ-chf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="74U-DR-w5D">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -472,6 +492,7 @@
     <resources>
         <image name="gear" width="30" height="30"/>
         <image name="paper-plane" width="30" height="30"/>
+        <image name="shop" width="29" height="30"/>
         <image name="star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
