@@ -29,7 +29,6 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 
 
 
-    @IBOutlet weak var tableView: UIView!
     @IBOutlet weak var mapView: MKMapView!
     var resultSearchController:UISearchController? = nil
     var currentOption = 0
@@ -39,7 +38,6 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     let distanceSpan: Double = 500
     
     override func viewDidLoad() {
-        self.tableView.isHidden = false
         super.viewDidLoad()
         self.locationManager = CLLocationManager()
         if let locationManager = self.locationManager {
@@ -163,18 +161,6 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         
     }
 
-    @IBAction func mapSegControlAction(_ sender: UISegmentedControl) {
-        self.currentOption = self.MapSegControl.selectedSegmentIndex
-        switch MapSegControl.selectedSegmentIndex {
-        case 0:
-            tableView.isHidden = false
-        case 1:
-            tableView.isHidden = true
-        default:
-            break;
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
