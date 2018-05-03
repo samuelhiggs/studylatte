@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,6 +86,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4wI-2e-tHp" kind="show" id="8Mg-pt-bVg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -97,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ou1-3d-HgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2415" y="460"/>
+            <point key="canvasLocation" x="1617" y="874"/>
         </scene>
         <!--Nearby Shops View Controller-->
         <scene sceneID="QKJ-jh-Fzf">
@@ -165,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Snc-14-5lY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655.1999999999998" y="-342.27886056971516"/>
+            <point key="canvasLocation" x="2407" y="-706"/>
         </scene>
         <!--Nearby Shops Table View-->
         <scene sceneID="s52-7V-U72">
@@ -215,7 +218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nsu-3z-Gv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3150" y="-1058"/>
+            <point key="canvasLocation" x="3212" y="-707"/>
         </scene>
         <!--Details Page View Controller-->
         <scene sceneID="wrw-sD-neR">
@@ -240,6 +243,14 @@
                                     <action selector="appendToFavArray:" destination="4wI-2e-tHp" eventType="touchUpInside" id="dqz-Jr-js1"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8xE-DO-KKR">
+                                <rect key="frame" x="82" y="295" width="211" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Seats Available"/>
+                                    <segment title="No Seats"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nww-7j-tbj"/>
@@ -250,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Rb-Yt-Egt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3976.8000000000002" y="-1437.0314842578712"/>
+            <point key="canvasLocation" x="4058" y="-707"/>
         </scene>
         <!--Location Search Table-->
         <scene sceneID="UUm-NO-eyk">
@@ -294,7 +305,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8y-5q-v1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4040.8000000000002" y="-705.69715142428788"/>
+            <point key="canvasLocation" x="4057" y="54"/>
         </scene>
         <!--Settings-->
         <scene sceneID="IkG-am-BF3">
@@ -391,7 +402,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
             </objects>
-            <point key="canvasLocation" x="4594.3999999999996" y="54.422788605697157"/>
+            <point key="canvasLocation" x="2406" y="55"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y6a-9r-1TD">
@@ -432,7 +443,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLc-Xm-xDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756" y="53.523238380809602"/>
+            <point key="canvasLocation" x="1617" y="54"/>
         </scene>
         <!--Coffee Shops Near Me-->
         <scene sceneID="vr7-me-k60">
@@ -453,7 +464,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7N0-Yu-KDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1717.5999999999999" y="-341.37931034482762"/>
+            <point key="canvasLocation" x="1617" y="-706"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="bhS-n3-XMS">
@@ -472,7 +483,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxA-wf-U9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716.8" y="460.56971514242883"/>
+            <point key="canvasLocation" x="833" y="874"/>
         </scene>
     </scenes>
     <resources>
@@ -480,4 +491,7 @@
         <image name="paper-plane" width="30" height="30"/>
         <image name="star" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Mg-pt-bVg"/>
+    </inferredMetricsTieBreakers>
 </document>
