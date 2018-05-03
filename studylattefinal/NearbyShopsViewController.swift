@@ -152,6 +152,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             searchResults = response.mapItems
             for shop in searchResults {
                 shop.phoneNumber = String(describing: arc4random_uniform(_:2))
+                print(shop.phoneNumber)
             }
             
             //Drop a pin on each result

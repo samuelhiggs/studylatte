@@ -49,7 +49,27 @@ class DetailsPageViewController: UIViewController {
             shopName.text = shop.name
             addressLabel.text = parseAddress(selectedItem: shop.placemark)
             self.title = shop.name
+            if (Int(shop.phoneNumber!) == 1 ) {
+                openTable(isOpen:true)
+            } else{
+                print(shop.phoneNumber!)
+                openTable(isOpen:false)
+            }
         }
+    }
+    
+    func openTable(isOpen:Bool){
+        if isOpen == true{
+            let image = UIImage(named: "green100") as UIImage?
+            imageView.image = image
+            isOpenLabel.text = "Seats available!"
+            
+        } else{
+            let image = UIImage(named: "red100") as UIImage?
+            imageView.image = image
+            isOpenLabel.text = "No seats available"
+        }
+        
     }
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
