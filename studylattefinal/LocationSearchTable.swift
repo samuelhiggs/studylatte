@@ -44,14 +44,14 @@ extension LocationSearchTable : UISearchResultsUpdating {
         guard let mapView = mapView,
             let searchBarText = searchController.searchBar.text else { return }
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = "coffee \(searchBarText)"
+        request.naturalLanguageQuery = "coffee"
         request.region = mapView.region
         let search = MKLocalSearch(request: request)
         search.start { response, _ in
             guard let response = response else {
                 return
             }
-            self.matchingItems = response.mapItems
+            self.matchingItems = response.mapItems.filter({($0.name?.lowercased().contains(searchBarText.lowercased()))!})
             self.tableView.reloadData()
             /*request.naturalLanguageQuery = "coffee"
              for index in 0..<self.matchingItems.count {

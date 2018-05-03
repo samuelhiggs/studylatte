@@ -13,6 +13,9 @@ import CoreLocation
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool)
 }
+class MyPointAnnotation : MKPointAnnotation {
+    var pinTintColor: UIColor?
+}
 
 class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -34,8 +37,6 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         self.tableView.isHidden = false
         super.viewDidLoad()
-        
-        
         self.locationManager = CLLocationManager()
         if let locationManager = self.locationManager {
             locationManager.delegate = self
@@ -92,6 +93,22 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if let annotation = annotation as? MyPointAnnotation {
+            annotationView?.pinTintColor = annotation.pinTintColor
+        }
+        
+        return annotationView
     }
     
     func displayNearbyShops() {
@@ -156,12 +173,18 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 extension NearbyShopsViewController: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool){
         // cache the pin
+        mapView.delegate = self as? MKMapViewDelegate
         selectedPin = placemark
         // clear existing pins
         //mapView.removeAnnotations(mapView.annotations)
-        let annotation = MKPointAnnotation()
+        let annotation = MyPointAnnotation()
         annotation.coordinate = placemark.coordinate
         annotation.title = placemark.name
+        if (annotation.title?.contains("H"))!{
+            
+            annotation.pinTintColor = .green
+            
+        }
         if let city = placemark.locality,
             let state = placemark.administrativeArea {
             annotation.subtitle = "\(city), \(state)"

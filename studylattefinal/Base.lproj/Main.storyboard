@@ -57,7 +57,7 @@
         <!--Favorites-->
         <scene sceneID="2tI-LM-Rz5">
             <objects>
-                <viewController id="E62-9N-Ebo" customClass="FavoritesViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favorites" id="E62-9N-Ebo" customClass="FavoritesViewController" customModule="studylattefinal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WaM-Hx-TW1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

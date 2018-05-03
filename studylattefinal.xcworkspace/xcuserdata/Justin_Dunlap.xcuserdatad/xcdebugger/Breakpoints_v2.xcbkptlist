@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/NearbyShopsViewController.swift"
-            timestampString = "546930207.800335"
+            timestampString = "547012345.736925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "dropPinZoomIn(placemark:firstTime:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.050018"
+            timestampString = "547012345.7370729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.05009"
+            timestampString = "547012345.737471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.050146"
+            timestampString = "547012345.737677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.0501961"
+            timestampString = "547012345.737866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.050248"
+            timestampString = "547012345.738067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.0503"
+            timestampString = "547012345.738277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.050352"
+            timestampString = "547012345.738462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/LocationSearchTable.swift"
-            timestampString = "546929529.050401"
+            timestampString = "547012345.738647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/NearbyShopsViewController.swift"
-            timestampString = "546930207.80082"
+            timestampString = "547012345.738829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "addMapTrackingButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,12 +170,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "studylattefinal/NearbyShopsViewController.swift"
-            timestampString = "546930207.8010401"
+            timestampString = "547012345.738886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "addMapTrackingButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "studylattefinal/NearbyShopsViewController.swift"
+            timestampString = "547012345.738932"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "dropPinZoomIn(placemark:firstTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "studylattefinal/NearbyShopsViewController.swift"
+            timestampString = "547012345.738984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "dropPinZoomIn(placemark:firstTime:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "studylattefinal.NearbyShopsViewController.dropPinZoomIn(placemark: __ObjC.MKPlacemark, firstTime: Swift.Bool) -&gt; ()"
+                  moduleName = "studylattefinal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Justin_Dunlap/Documents/GitHub/studylatte/studylattefinal/NearbyShopsViewController.swift"
+                  timestampString = "546932899.046384"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "944">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "studylattefinal.NearbyShopsViewController.dropPinZoomIn(placemark: __ObjC.MKPlacemark, firstTime: Swift.Bool) -&gt; ()"
+                  moduleName = "studylattefinal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Justin_Dunlap/Documents/GitHub/studylatte/studylattefinal/NearbyShopsViewController.swift"
+                  timestampString = "546932899.048998"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183"
+                  offsetFromSymbolStart = "3396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "studylattefinal/NearbyShopsViewController.swift"
+            timestampString = "547012345.739025"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
+            landmarkName = "dropPinZoomIn(placemark:firstTime:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
