@@ -84,6 +84,7 @@ extension LocationSearchTable {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row]
         let firstTime:Bool = false
+        selectedItem.phoneNumber = String(describing: arc4random_uniform(_:2))
         handleMapSearchDelegate?.dropPinZoomIn(item: selectedItem, firstTime: firstTime)
         dismiss(animated: true, completion: nil)
     }

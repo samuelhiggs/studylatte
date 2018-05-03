@@ -23,15 +23,25 @@ class DetailsPageViewController: UIViewController {
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var removeBtn: UIButton!
     @IBOutlet weak var isFav: UILabel!
-        
-    @IBAction func removeFromFav(_ sender: Any) {
-        if (favList.contains(shop!)) {
-            favList.remove(at: favList.index(of: shop!)!)
-            removeBtn.isHidden = true
-            addBtn.isHidden = false
-            isFav.isHidden = true
+    @IBAction func toggleOpen(_ sender: Any) {
+        if (shop?.phoneNumber!.contains("1"))! {
+            shop?.phoneNumber = "0"
+            openTable(isOpen:false)
+        }
+        else {
+            shop?.phoneNumber = "1"
+            openTable(isOpen:true)
         }
     }
+    
+        @IBAction func removeFromFav(_ sender: Any) {
+            if (favList.contains(shop!)) {
+                favList.remove(at: favList.index(of: shop!)!)
+                removeBtn.isHidden = true
+                addBtn.isHidden = false
+                isFav.isHidden = true
+            }
+        }
     
     @IBAction func appendToFavArray(_ sender: Any) {
         // append the current label and location to favorites list
@@ -78,7 +88,7 @@ class DetailsPageViewController: UIViewController {
                     openTable(isOpen:false)
                 }
             }
-        }
+    }
     
     func openTable(isOpen:Bool){
         if isOpen == true{
