@@ -10,8 +10,24 @@ import UIKit
 import CoreLocation
 import MapKit
 
+// Creates array for Favorites list
+var favList:[MKMapItem] = []
+
 class DetailsPageViewController: UIViewController {
     @IBOutlet weak var shopName: UILabel!
+    
+    var shop:MKMapItem?
+    
+    @IBAction func appendToFavArray(_ sender: Any) {
+        // append the current label and location to favorites list
+        if (!favList.contains(shop!)) {
+            favList.append(shop!)
+            print(favList)
+            print("BREAK")
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -25,8 +41,6 @@ class DetailsPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    var shop:MKMapItem?
     
     func populateUI() {
         if let shop = shop {
