@@ -50,6 +50,7 @@ class DetailsPageViewController: UIViewController {
             addressLabel.text = parseAddress(selectedItem: shop.placemark)
             self.title = shop.name
             if shop.phoneNumber!.contains("1") {
+                print(shop.phoneNumber!)
                 openTable(isOpen:true)
             } else{
                 print(shop.phoneNumber!)
