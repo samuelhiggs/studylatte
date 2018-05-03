@@ -49,7 +49,7 @@ class DetailsPageViewController: UIViewController {
             shopName.text = shop.name
             addressLabel.text = parseAddress(selectedItem: shop.placemark)
             self.title = shop.name
-            if (Int(shop.phoneNumber!) == 1 ) {
+            if shop.phoneNumber!.contains("1") {
                 openTable(isOpen:true)
             } else{
                 print(shop.phoneNumber!)
