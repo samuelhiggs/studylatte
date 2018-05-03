@@ -15,7 +15,7 @@ var initialLocation:CLLocationCoordinate2D?
 var searchResults:[MKMapItem] = []
 
 protocol HandleMapSearch {
-    func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool)
+    func dropPinZoomIn(item:MKMapItem, firstTime:Bool)
 }
 class MyPointAnnotation : MKPointAnnotation {
     var pinTintColor: UIColor?
@@ -23,7 +23,7 @@ class MyPointAnnotation : MKPointAnnotation {
 
 class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     
-    var selectedPin:MKPlacemark? = nil
+    var selectedPin:MKMapItem? = nil
     
     @IBOutlet weak var MapSegControl: UISegmentedControl!
 
@@ -67,6 +67,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         locationSearchTable.handleMapSearchDelegate = self
         
         addMapTrackingButton()
+        addSegueButton()
 
         // Do any additional setup after loading the view.
 
@@ -86,6 +87,25 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
     @objc func centerMapOnUserButtonClicked() {
         mapView.setUserTrackingMode(MKUserTrackingMode.follow, animated: true)
     }
+    
+    func addSegueButton(){
+        let image = UIImage(named: "rightarrow") as UIImage?
+        let button   = UIButton(type: UIButtonType.custom) as UIButton
+        button.frame = CGRect(origin: CGPoint(x:330, y: 15), size: CGSize(width: 35, height: 35))
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(NearbyShopsViewController.segueButtonClicked), for:.touchUpInside)
+        mapView.addSubview(button)
+    }
+    @objc func segueButtonClicked() {
+        // do something
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "detailsVC") as? DetailsPageViewController
+        print(selectedPin?.name!)
+        newViewController?.shop = selectedPin!
+        self.navigationController?.pushViewController(newViewController!, animated: true)
+    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -136,7 +156,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
             //Drop a pin on each result
             for item in response.mapItems {
                 let firstTime:Bool = true
-                self.dropPinZoomIn(placemark: item.placemark, firstTime: firstTime)
+                self.dropPinZoomIn(item: item, firstTime: firstTime)
             }
         }
         
@@ -175,22 +195,22 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 
 //For dropping a pin on each search result
 extension NearbyShopsViewController: HandleMapSearch {
-    func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool){
+    func dropPinZoomIn(item:MKMapItem, firstTime:Bool){
         // cache the pin
         mapView.delegate = self as? MKMapViewDelegate
-        selectedPin = placemark
+        selectedPin = item
         // clear existing pins
         //mapView.removeAnnotations(mapView.annotations)
         let annotation = MyPointAnnotation()
-        annotation.coordinate = placemark.coordinate
-        annotation.title = placemark.name
+        annotation.coordinate = item.placemark.coordinate
+        annotation.title = item.placemark.name
         if (annotation.title?.contains("H"))!{
             
             annotation.pinTintColor = .green
             
         }
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea {
+        if let city = item.placemark.locality,
+            let state = item.placemark.administrativeArea {
             annotation.subtitle = "\(city), \(state)"
         }
         mapView.addAnnotation(annotation)
@@ -198,12 +218,12 @@ extension NearbyShopsViewController: HandleMapSearch {
         //Centers the map view around the dropped pin
         if firstTime == false{
             let span = MKCoordinateSpanMake(0.02, 0.02)
-            let region = MKCoordinateRegionMake(placemark.coordinate, span)
+            let region = MKCoordinateRegionMake(item.placemark.coordinate, span)
             mapView.setRegion(region, animated: true)
         }
-
         
-    
+        
+        
     }
 }
 
