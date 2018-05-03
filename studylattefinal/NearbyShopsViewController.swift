@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CoreLocation
 
+var initialLocation:CLLocationCoordinate2D?
+
+var searchResults:[MKMapItem] = []
+
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark, firstTime:Bool)
 }
@@ -68,6 +72,7 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
+    
     func addMapTrackingButton(){
         let image = UIImage(named: "navicon") as UIImage?
         let button   = UIButton(type: UIButtonType.custom) as UIButton
@@ -113,8 +118,8 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
         request.naturalLanguageQuery = "Coffee"
         
         //Set search area around current location
-        let currentLocation = self.locationManager?.location?.coordinate
-        let searchArea = MKCoordinateRegion(center: currentLocation!, span: MKCoordinateSpanMake(0.05, 0.05))
+        initialLocation = self.locationManager?.location?.coordinate
+        let searchArea = MKCoordinateRegion(center: initialLocation!, span: MKCoordinateSpanMake(0.05, 0.05))
         request.region = searchArea
         
         //Search for the created query
@@ -124,6 +129,9 @@ class NearbyShopsViewController: UIViewController, CLLocationManagerDelegate {
                 print("There was an error searching for: \(request.naturalLanguageQuery) error: \(error)")
                 return
             }
+            
+            //Save search results in global array
+            searchResults = response.mapItems
             
             //Drop a pin on each result
             for item in response.mapItems {
@@ -198,3 +206,23 @@ extension NearbyShopsViewController: HandleMapSearch {
     
     }
 }
+
+func sortbyLocation(array: [MKMapItem]) -> [MKMapItem] {
+    var shopDistances = [MKMapItem: Double]()
+    var sortedArray:[MKMapItem] = []
+    
+    for shop in array {
+        let currentLocation = CLLocation(latitude: (initialLocation?.latitude)!, longitude: (initialLocation?.longitude)!)
+        let shopLocation = CLLocation(latitude: shop.placemark.coordinate.latitude, longitude: shop.placemark.coordinate.longitude)
+        let distance = shopLocation.distance(from: currentLocation) * 0.000621371
+        shopDistances[shop] = distance
+    }
+    
+    for (key,value) in (Array(shopDistances).sorted {$0.1 < $1.1}) {
+        sortedArray.append(key)
+    }
+    
+    return sortedArray
+}
+
+
